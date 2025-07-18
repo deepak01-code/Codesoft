@@ -23,12 +23,12 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
     header {
       background-color: var(--white);
-      padding: 20px 50px;
+      padding: 15px 30px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       display: flex;
       justify-content: space-between;
@@ -41,14 +41,14 @@
 
     .logo {
       font-weight: bold;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       color: var(--primary-color);
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 20px;
+      gap: 16px;
     }
 
     nav a {
@@ -63,7 +63,15 @@
     }
 
     section {
-      padding: 100px 50px 60px;
+      padding: 50px 30px 30px;
+    }
+
+    #about,
+    #skills,
+    #projects {
+      padding-top: 30px;
+      padding-bottom: 20px;
+      margin-bottom: 0;
     }
 
     #hero {
@@ -73,7 +81,7 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      padding-top: 140px;
+      padding-top: 110px;
     }
 
     .hero-text {
@@ -81,18 +89,18 @@
     }
 
     .hero-text h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+      font-size: 2.5rem;
+      margin-bottom: 8px;
     }
 
     .hero-text h3 {
       font-weight: 400;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .hero-buttons .btn {
-      padding: 10px 20px;
-      margin-right: 15px;
+      padding: 8px 16px;
+      margin-right: 10px;
       border: 2px solid white;
       border-radius: 5px;
       background: transparent;
@@ -109,33 +117,33 @@
     }
 
     .hero-img img {
-      width: 250px;
-      height: 250px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       object-fit: cover;
-      border: 5px solid white;
+      border: 4px solid white;
     }
 
     h2 {
       text-align: center;
-      font-size: 2rem;
-      margin-bottom: 20px;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
       color: var(--primary-color);
     }
 
     p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       text-align: center;
-      max-width: 800px;
-      margin: auto;
+      max-width: 760px;
+      margin: 0 auto 20px;
     }
 
     form {
-      max-width: 600px;
+      max-width: 550px;
       margin: auto;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 15px;
     }
 
     input, textarea {
@@ -162,15 +170,15 @@
 
     .contact-details {
       text-align: center;
-      font-size: 1.1rem;
-      margin-top: 30px;
+      font-size: 1rem;
+      margin-top: 20px;
     }
 
     footer {
       background-color: var(--primary-color);
       color: var(--white);
       text-align: center;
-      padding: 20px;
+      padding: 15px;
     }
 
     html {
@@ -183,6 +191,54 @@
 
     a:hover {
       text-decoration: underline;
+    }
+
+    /* Project Cards */
+    .project-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .project-card {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      width: 260px;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      #hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-img img {
+        margin-top: 20px;
+      }
+
+      section {
+        padding: 40px 20px 25px;
+      }
     }
   </style>
 </head>
@@ -228,7 +284,18 @@
   <section id="projects">
     <h2>Projects</h2>
     <p>Here are a few things I’ve been working on lately. More coming soon!</p>
-    <!-- You can add your projects here as individual cards -->
+    <div class="project-cards">
+      <div class="project-card">
+        <h3 style="color: var(--primary-color); margin-bottom: 8px;">Landing Page</h3>
+        <p>A responsive business landing page with modern design and call-to-action elements.</p>
+        <a href="https://task002code.netlify.app/" target="_blank">Visit Site →</a>
+      </div>
+      <div class="project-card">
+        <h3 style="color: var(--primary-color); margin-bottom: 8px;">Calculator</h3>
+        <p>A smart calculator built using HTML, CSS, and JavaScript with clean UI.</p>
+        <a href="https://task003code.netlify.app/" target="_blank">Visit Site →</a>
+      </div>
+    </div>
   </section>
 
   <section id="contact">
@@ -236,7 +303,7 @@
     <form aria-label="Contact form">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
     <div class="contact-details">
